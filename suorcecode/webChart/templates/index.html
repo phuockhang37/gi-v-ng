@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stock Data Visualization</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #f4f4f4;
+      }
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+      .plot-container {
+        margin: 20px auto;
+        max-width: 1000px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CÁC BIỂU ĐỒ TRONG BÀI</h1>
+
+    <div class="plot-container">
+      <h2>Price, Open, High, Low Over Time</h2>
+      <img
+        src="data:image/png;base64,{{ plot1 }}"
+        alt="Price, Open, High, Low Plot"
+      />
+    </div>
+
+    <div class="plot-container">
+      <h2>Volume Over Time</h2>
+      <img src="data:image/png;base64,{{ plot2 }}" alt="Volume Plot" />
+    </div>
+
+    <div class="plot-container">
+      <h2>Change% Over Time (Line)</h2>
+      <img src="data:image/png;base64,{{ plot3 }}" alt="Change% Line Plot" />
+    </div>
+
+    <div class="plot-container">
+      <h2>Price Change Percentage Over Time (Bar)</h2>
+      <img src="data:image/png;base64,{{ plot4 }}" alt="Change% Bar Plot" />
+    </div>
+
+    <div class="plot-container">
+      <h2>Price and Trading Volume Over Time</h2>
+      <img
+        src="data:image/png;base64,{{ plot5 }}"
+        alt="Price and Volume Combined Plot"
+      />
+    </div>
+  </body>
+</html>

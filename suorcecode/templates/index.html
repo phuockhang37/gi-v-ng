@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gold Price Prediction</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <!-- Link đến file CSS trong static -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1><i class="fas fa-coins"></i> Predict Gold Price</h1>
+      <form id="prediction-form">
+        <!-- Input Fields -->
+        <label for="open">Open:</label>
+        <input
+          type="text"
+          id="open"
+          name="open"
+          placeholder="Enter open price..."
+          required
+        />
+
+        <label for="high">High:</label>
+        <input
+          type="text"
+          id="high"
+          name="high"
+          placeholder="Enter high price..."
+          required
+        />
+
+        <label for="low">Low:</label>
+        <input
+          type="text"
+          id="low"
+          name="low"
+          placeholder="Enter low price..."
+          required
+        />
+
+        <label for="vol">Vol:</label>
+        <input
+          type="text"
+          id="vol"
+          name="vol"
+          placeholder="Enter volume..."
+          required
+        />
+
+        <label for="change">Change%:</label>
+        <input
+          type="text"
+          id="change"
+          name="change"
+          placeholder="Enter change percentage..."
+          required
+        />
+
+        <fieldset>
+          <legend style="color: #333">Select Model:</legend>
+          <label>
+            <input type="radio" name="model" value="ada" required /> AdaBoost
+          </label>
+          <label>
+            <input type="radio" name="model" value="xgb" /> XGBoost
+          </label>
+          <label>
+            <input type="radio" name="model" value="lgb" /> LightGBM
+          </label>
+        </fieldset>
+
+        <!-- Submit Button -->
+        <button type="submit"><i class="fas fa-chart-line"></i> Predict</button>
+      </form>
+
+      <!-- Result Section -->
+      <div id="result"></div>
+    </div>
+
+    <!-- Link đến file JavaScript trong static -->
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+  </body>
+</html>
